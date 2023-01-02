@@ -18,7 +18,7 @@ var cards = [
     ["オペレーション","無","高速充填","https://pbs.twimg.com/media/FjfVKXJUYAAN6rL?format=jpg&name=large"],
     ["ロボ","補","ベリトリア","https://pbs.twimg.com/media/FjfUsynVIAYxRGN?format=jpg&name=large"],
     ["ロボ","陸","キュール","https://pbs.twimg.com/media/Fi-2r0MVEAEam5q?format=jpg&name=large"],
-    ["ロボ","砲","リーゼル・ツヴァイク","https://pbs.twimg.com/media/Fi-2r0MVEAEam5q?format=jpg&name=large"],
+    ["ロボ","砲","リーゼル・ツヴァイク","https://pbs.twimg.com/media/Fi-2t8VUAAAs3l_?format=jpg&name=large"],
     ["ロボ","補","エイミィ","https://pbs.twimg.com/media/Fi-2R6mUAAEl4BV?format=jpg&name=large"],
     ["ロボ","砲","セリュー・ブランシュ","https://pbs.twimg.com/media/Fi-2SZcUUAAJSkn?format=jpg&name=large"],
     ["オペレーション","無","エクスチェンジ","https://pbs.twimg.com/media/Fi-17q9VsAAmfjX?format=jpg&name=large"],
@@ -31,7 +31,7 @@ var cards = [
     ["ロボ","空","フラクタリスガール","https://pbs.twimg.com/media/Fi-uso0UUAAI1kP?format=jpg&name=large"],
     ["ロボ","砲","ベルゼイラフガール","https://pbs.twimg.com/media/Fi-us1uUUAAABBK?format=jpg&name=large"],
     ["ロボ","空","アルシー・リベット","https://pbs.twimg.com/media/FizEVaNVUAE77Wm?format=jpg&name=medium"],
-    ["ロボ","砲","モニカ・ゴールド","https://pbs.twimg.com/media/FizEVaNVUAE77Wm?format=jpg&name=medium"],
+    ["ロボ","砲","モニカ・ゴールド","https://pbs.twimg.com/media/FizEVaYVQAA3ffO?format=jpg&name=medium"],
     ["オペレーション","補","シェルトラップ","https://pbs.twimg.com/media/FizEYJNUUAAKLNh?format=jpg&name=medium"],
     ["オペレーション","補","スロウトラップ","https://pbs.twimg.com/media/FizEYJKUcAACN7U?format=jpg&name=medium"],
     ["ロボ","補","メルフィ","https://pbs.twimg.com/media/FizEbToUoAAEsxG?format=jpg&name=medium"],
@@ -109,7 +109,7 @@ var cards = [
 ];
 
 var decks = [];
-var search_cards = [];
+var search_cards = cards;
 
 (function(){
 	//初期表示
@@ -118,6 +118,50 @@ var search_cards = [];
 		cardlist.insertAdjacentHTML('afterbegin',"<img class='list card' id='"+i+"' src='"+cards[i][3]+"'' alt='"+cards[i][2]+"' />")
 	}
 }());
+
+$(document).on('click', ".list", function(){
+	card_id = $(this).attr('id');
+	decks.unshift(search_cards[card_id])
+	reload_deck()
+})
+
+$(document).on('click', '.deck' ,function(){
+	card_id = $(this).attr('id');
+	decks.splice(card_id,1)
+	reload_deck()
+})
+
+$(document).on('click', '#change_size' ,function(){
+    var val = document.getElementById('change_size').value * 0.01
+	console.log(document.getElementById('change_size').value)
+    document.getElementById('decklist').style.width = "calc(80vw * "+ val + ")"
+    //document.getElementsByClassname('decklist').style.width = "calc(10vw * "+ val + ")"
+})
+
+$('#reset').on('click', function(){
+	document.getElementById('cardname').value = ''
+	document.getElementById('type_rand').value = ''
+	document.getElementById('type_air').value = ''
+	document.getElementById('type_cannon').value = ''
+	document.getElementById('type_support').value = ''
+	document.getElementById('type_none').value = ''
+    $.when(
+		search_card()
+	).done(function(){
+		output_card()
+	})
+
+})
+
+$('#submit').on('click', function(){
+	$.when(
+		search_card()
+	).done(function(){
+		output_card()
+	})
+})
+
+
 
 function reload_deck(){
 	var decklist = document.getElementById("decklist")
@@ -129,61 +173,22 @@ function reload_deck(){
 	})
 }
 
-$(".list").on('click', function(){
-	card_id = $(this).attr('id');
-	decks.push(cards[card_id])
-	reload_deck()
-})
-
-$(".deck").on('click', function(){
-	card_id = $(this).attr('id');
-	console.log(card_id)
-	decks.splice(card_id,1)
-	reload_deck()
-})
-
 function output_card(){
 	var cardlist = document.getElementById("cardlist")
 	$.when(
 		$('#cardlist').empty()
 	).done(function(){
 		for(i = 0; i < search_cards.length; i++){
-			cardlist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+search_cards[i][3]+"'' alt='"+search_cards[i][2]+"' />")
-		}
-	})
-}
-
-function reset_card(){
-	var cardlist = document.getElementById("cardlist")
-	$.when(
-		$('#cardlist').empty()
-	).done(function(){
-		for(i = 0; i < cards.length; i++){
-			cardlist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+search_cards[i][3]+"'' alt='"+search_cards[i][2]+"' />")
+			cardlist.insertAdjacentHTML('afterbegin',"<img class='list card' id='"+i+"' src='"+search_cards[i][3]+"'' alt='"+search_cards[i][2]+"' />")
 		}
 	})
 }
 
 function search_card(){
 	search_cards = []
-	var search_word = document.getElementById('cardname').value
-	var type_rand = document.getElementById('type_rand').value
-	var type_air = document.getElementById('type_air').value
-	var type_cannon = document.getElementById('type_cannon').value
-	var type_support = document.getElementById('type_support').value
-	var type_none = document.getElementById('type_none').value
-	
+	var search_word = new RegExp(document.getElementById('cardname').value)
+    search_cards = cards.filter(function(value){
+        return (value[2].match(search_word))
+    })
 }
-
-$('#reset').on('click', function(){
-	reset_card()
-})
-
-$('#submit').on('click', function(){
-	$.when(
-		search_card()
-	).done(function(){
-		output_card()
-	})
-})
 
