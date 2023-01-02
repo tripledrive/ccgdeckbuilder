@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ccg_deckmaker(仮)</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<div class="search">
+			<label>カード名で絞り込む：<input type="text" id="cardname" name="cardname"></label><br />
+			タイプで絞り込む：
+			<input type="checkbox" id="type_rand" name="type_rand"><label for="type_land">陸</label>
+			<input type="checkbox" id="type_air" name="type_air"><label for="type_air">空</label>
+			<input type="checkbox" id="type_cannon" name="type_cannon"><label for="type_cannon">砲</label>
+			<input type="checkbox" id="type_support" name="type_support"><label for="type_support">補</label>
+			<input type="checkbox" id="type_none" name="type_none"><label for="type_none">無</label><br />
+			<input type="button" value="検索実行" id="submit"><input type="button" value="絞り込みリセット" id="reset">
+		</div>
+		<div class="container">
+			<div class="item" id="cardlist">
+			</div>
+			<div class="item" id="decklist">
+			</div>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
