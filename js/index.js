@@ -103,7 +103,7 @@ var cards = [
     ["オペレーション","陸","アサルト","https://pbs.twimg.com/media/FgZjpy8UoAAd-es?format=jpg&name=large"],
     ["オペレーション","補","ジャミング","https://pbs.twimg.com/media/FgZjqP9VQAEAmRQ?format=jpg&name=large"],
     ["ロボ","空","ソードウィング","https://pbs.twimg.com/media/FgZjAFPUUAAHgun?format=jpg&name=large"],
-    ["ロボ","空","へリンガル","https://pbs.twimg.com/media/FgZjArIUAAIVtBP?format=jpg&name=large"],
+    ["ロボ","空","ヘリンガル","https://pbs.twimg.com/media/FgZjArIUAAIVtBP?format=jpg&name=large"],
     ["ロボ","陸","ゼロファイター","https://pbs.twimg.com/media/FgZivFpVQAERFxc?format=jpg&name=large"],
     ["ロボ","陸","ゼロセイバー","https://pbs.twimg.com/media/FgZiv9gUAAA_bAf?format=jpg&name=large"]
 ];
