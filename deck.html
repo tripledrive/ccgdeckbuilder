@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CCG Deck Maker" />
+    <meta name="twitter:description" content="CosmicCardGameのデッキ作成支援ツール" />
+    <meta name="twitter:image" content="" />
+	<title>CCG Deck Builder</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="outputpage.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>CCG Deck Builder - 作成したデッキ</h2>
+    <div class="container">
+		<div class="item" id="output_decklist">
+		</div>
+        <div class="deckconsole" id="deckconsole">
+            <div class="share">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="デッキを作成しました！" data-hashtags="CCGDeckBuilder" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="link">
+                <button type="button" onclick="location.href='https://tripledrive.github.io/ccgdeckbuilder/'" class="btn btn-primary">CCG Deck Builderを開く</button>
+            </div>
+        </div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+	<script src="js/cards.js"></script>
+    <script src="js/deckoutput.js"></script>
+</body>
+
+</html>

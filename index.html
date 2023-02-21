@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="utf-8">
-		<title>CCG Deck Builder</title>
-		<link rel="stylesheet" type="text/css" href="index.css">
-	</head>
-	<body>
-		<h2>CCG Deck Builder (Beta)</h2>
-		<div class="caption">サイバーステップより発売されているLCG「Cosmic Card Game」のデッキ制作支援ツールです。<a href="https://gainful-baroness-329.notion.site/CCG-Deck-Builder-cc91539d4be14634bac1f3960c3c50e4">詳細はこちら</a><br />当サイト上で使用しているカード画像の著作権および商標権、その他知的財産権は、当該コンテンツの発信元に帰属します。<br/> copyright(c) 2006 - 2023 CyberStep, Inc. All Rights Reserved.</div>
-		<div class="search">
-			<label for="cardname">カード名検索：</label><input type="text" id="cardname" name="cardname">
-			<input type="button" value="検索実行" id="submit" class="button"><input type="button" value="絞り込みリセット" id="reset" class="button">
+
+<head>
+	<meta charset="utf-8">
+	<title>CCG Deck Builder</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<h2>CCG Deck Builder (Beta)</h2>
+	<div class="caption">サイバーステップより発売されているLCG「Cosmic Card Game」のデッキ制作支援ツールです。<a
+			href="https://gainful-baroness-329.notion.site/CCG-Deck-Builder-cc91539d4be14634bac1f3960c3c50e4">詳細はこちら</a><br />当サイト上で使用しているカード画像の著作権および商標権、その他知的財産権は、当該コンテンツの発信元に帰属します。<br />
+		copyright(c) 2006 - 2023 CyberStep, Inc. All Rights Reserved. | Last modified 2022.2.21</div>
+	<hr>
+	<div class="controller">
+		<div class="search_container">
+			<input type="text" id="cardname" name="cardname">
+			<input type="button" value="&#xf002" id="submit" class="button">
 		</div>
 		<div class="cardsize">
-			<label for="change_size">デッキのカードの表示サイズを変更</label><input type="range" id="change_size" name="change_size" min="1" max="100">
+			<label for="change_size">カード表示サイズ</label><input type="range" id="change_size" name="change_size"
+				min="1" max="100">
 		</div>
-		<div class="container">
-			<div class="item" id="cardlist">
-			</div>
-			<div class="item" id="decklist">
-			</div>
+		<div class="decksave">
+			<input type="button" value="デッキを出力(別タブで開きます)" id="output_deck">
 		</div>
-		
-		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-		<script src="js/index.js"></script>
-	</body>
+	</div>
+	<div class="container">
+		<div class="item" id="cardlist">
+		</div>
+		<div class="item" id="decklist">
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	<script src="js/cards.js"></script>
+	<script src="js/index.js"></script>
+</body>
+
 </html>

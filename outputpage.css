@@ -1,0 +1,21 @@
+body{
+    margin-left: 2.5vw;
+}
+
+body h2{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#output_decklist{
+	height: 0;
+	width: 40vw;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.deckconsole{
+    text-align: center;
+    margin-left:3vw;
+}
