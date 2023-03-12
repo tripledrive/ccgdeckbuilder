@@ -33,7 +33,7 @@ $(document).on('click', '#copy_deck' ,function(){
             let json = JSON.stringify(decks_perf, undefined, 1);
             localStorage.setItem('decks', json);
         }).done(function(){
-            window.open('./index.html', '_blank')
+            window.open('./', '_blank')
         })
     }else{
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
