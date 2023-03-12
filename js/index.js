@@ -8,7 +8,7 @@ var search_cards = cards;
 	for(i = 0; i < cards.length; i++){
 		cardlist.insertAdjacentHTML('afterbegin',"<img class='list card' id='"+i+"' src='"+cards[i][3]+"'' alt='"+cards[i][2]+"' />")
 	}
-    copy_decks = JSON.parse(window.localStorage.getItem(['decks']))
+    copy_decks = JSON.parse(window.localStorage.getItem('decks'))
     console.log(copy_decks)
     if(copy_decks !== 'null'){
         decks = copy_decks
