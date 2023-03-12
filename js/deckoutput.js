@@ -31,9 +31,9 @@ $(document).on('click', '#copy_deck' ,function(){
     if (window.localStorage) {
         $.when(function(){
             let json = JSON.stringify(decks_perf, undefined, 1);
-            localStorage.setItem(['decks'], json);
+            localStorage.setItem('decks', json);
         }).done(function(){
-            location.href = './index.html'
+            window.open('./index.html', '_blank')
         })
     }else{
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
