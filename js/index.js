@@ -10,7 +10,7 @@ var search_cards = cards;
 	}
     copy_decks = JSON.parse(window.localStorage.getItem('decks'))
     console.log(copy_decks)
-    if(copy_decks !== 'null'){
+    if(copy_decks !== null){
         //decks = copy_decks
         for(i = 0; i < copy_decks.length; i++){
             decks.unshift(copy_decks[i][0])
