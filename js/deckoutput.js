@@ -26,14 +26,18 @@ async function deckload(){
     }
 }
 
+function writestorage(){
+    let json = JSON.stringify(decks_perf, undefined, 1);
+    console.log(json)
+    localStorage.setItem('decks', json);
+}
+
 $(document).on('click', '#copy_deck' ,function(){
     window.localStorage.clear()
     if (window.localStorage) {
-        $.when(function(){
-            let json = JSON.stringify(decks_perf, undefined, 1);
-            console.log(json)
-            localStorage.setItem('decks', json);
-        }).done(function(){
+        $.when(
+            writestorage()
+        ).done(function(){
             console.log(localStorage)
             //window.open('https://tripledrive.github.io/ccgdeckbuilder/', '_blank')
         })
