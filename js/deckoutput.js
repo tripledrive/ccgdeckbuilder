@@ -29,12 +29,9 @@ async function deckload(){
 $(document).on('click', '#copy_deck' ,function(){
     window.localStorage.clear()
     if (window.localStorage) {
-        $.when(
             writestorage()
-        ).done(function(){
             console.log(localStorage)
             //window.open('https://tripledrive.github.io/ccgdeckbuilder/', '_blank')
-        })
     }else{
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
     }
