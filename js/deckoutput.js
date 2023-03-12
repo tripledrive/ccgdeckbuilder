@@ -31,9 +31,10 @@ $(document).on('click', '#copy_deck' ,function(){
     if (window.localStorage) {
         $.when(function(){
             let json = JSON.stringify(decks_perf, undefined, 1);
+            console.log(json)
             localStorage.setItem('decks', json);
         }).done(function(){
-            window.open('./', '_blank')
+            window.open('https://tripledrive.github.io/ccgdeckbuilder/', '_blank')
         })
     }else{
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
