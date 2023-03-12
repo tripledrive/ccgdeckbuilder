@@ -8,9 +8,7 @@ var search_cards = cards;
 		cardlist.insertAdjacentHTML('afterbegin',"<img class='list card' id='"+i+"' src='"+cards[i][3]+"'' alt='"+cards[i][2]+"' />")
 	}
     decks = JSON.stringify(window.localStorage.getItem(['decks']))
-    if(decks != null){
-        reload_deck()
-    }
+    console.log(decks)
 }());
 
 $(document).on('click', ".list", function(){
