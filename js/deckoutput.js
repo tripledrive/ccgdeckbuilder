@@ -26,12 +26,6 @@ async function deckload(){
     }
 }
 
-function writestorage(){
-    let json = JSON.stringify(decks_perf, undefined, 1);
-    console.log(json)
-    localStorage.setItem('decks', json);
-}
-
 $(document).on('click', '#copy_deck' ,function(){
     window.localStorage.clear()
     if (window.localStorage) {
@@ -45,3 +39,9 @@ $(document).on('click', '#copy_deck' ,function(){
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
     }
 })
+
+function writestorage(){
+    let json = JSON.stringify(decks_perf, undefined, 1);
+    console.log(json)
+    localStorage.setItem('decks', json);
+}
