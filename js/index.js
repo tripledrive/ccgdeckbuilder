@@ -4,11 +4,15 @@ var search_cards = cards;
 (function(){
 	//初期表示
 	var cardlist = document.getElementById("cardlist")
+    var copy_decks = []
 	for(i = 0; i < cards.length; i++){
 		cardlist.insertAdjacentHTML('afterbegin',"<img class='list card' id='"+i+"' src='"+cards[i][3]+"'' alt='"+cards[i][2]+"' />")
 	}
-    decks = JSON.stringify(window.localStorage.getItem(['decks']))
-    console.log(decks)
+    copy_decks = JSON.stringify(window.localStorage.getItem(['decks']))
+    //console.log(copy_decks)
+    if(copy_decks !== 'null'){
+        //console.log("decks isnt null")
+    }
 }());
 
 $(document).on('click', ".list", function(){
