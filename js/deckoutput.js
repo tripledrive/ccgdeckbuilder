@@ -7,7 +7,7 @@ async function get_card(keyword){
         if(keyword == value[3]) return value[3]
     })
     decks_perf.unshift(get_cards)
-    console.log(decks_perf)
+    //console.log(decks_perf)
 }
 
 (async function(){
@@ -19,7 +19,7 @@ async function deckload(){
     var param_decode = decodeURIComponent(atob(param))
     var decklist = document.getElementById("output_decklist")
     decks = param_decode.split("+")
-    console.log(decks)
+    //console.log(decks)
     for(i = 0; i < decks.length-1; i++){
         decklist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+decks[i]+"' alt='' />")
         await get_card(decks[i])
@@ -31,7 +31,7 @@ $(document).on('click', '#copy_deck' ,function(){
     if (window.localStorage) {
         $.when(function(){
             let json = JSON.stringify(decks_perf, undefined, 1);
-            localStorage.setItem('decks', json);
+            localStorage.setItem(['decks'], json);
         }).done(function(){
             location.href = './index.html'
         })
