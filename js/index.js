@@ -13,7 +13,7 @@ var search_cards = cards;
     if(copy_decks !== 'null'){
         //decks = copy_decks
         for(i = 0; i < copy_decks.length; i++){
-            decks.unshift(decks[i][0])
+            decks.unshift(copy_decks[i][0])
         }
         console.log("decks isnt null")
         reload_deck()
