@@ -54,6 +54,7 @@ function reload_deck(){
 		for(i = 0; i < decks.length; i++){
             decklist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+decks[i][3]+"'' alt='"+decks[i][2]+"' />")
 		}
+        window.localStorage.clear();
 	})
 }
 
