@@ -30,7 +30,7 @@ $(document).on('click', '#copy_deck' ,function(){
     if (window.localStorage) {
             writestorage()
             console.log(localStorage)
-            //window.open('https://tripledrive.github.io/ccgdeckbuilder/', '_blank')
+            window.open('https://tripledrive.github.io/ccgdeckbuilder/', '_blank')
     }else{
         alert('お使いのブラウザはこの機能に対応してないみたいです！ごめんね。。')
     }
