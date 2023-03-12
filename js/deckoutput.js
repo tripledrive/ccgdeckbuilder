@@ -27,7 +27,6 @@ async function deckload(){
 }
 
 $(document).on('click', '#copy_deck' ,function(){
-    window.localStorage.clear()
     if (window.localStorage) {
             writestorage()
             console.log(localStorage)
