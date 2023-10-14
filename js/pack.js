@@ -30,8 +30,8 @@ $(document).on('click', '#open_box',function(){
     var boxtoper = pickcard(BT[Math.floor( Math.random() * 4 )])
     var promotion = pickcard(PR[Math.floor( Math.random() * 8 )])
 
-    picklist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+boxtoper[0][3]+"'' alt='"+boxtoper[0][2]+"' draggable='true' ondragstart='drag(event)' />")
-    picklist.insertAdjacentHTML('afterbegin',"<img class='deck card' id='"+i+"' src='"+promotion[0][3]+"'' alt='"+promotion[0][2]+"' draggable='true' ondragstart='drag(event)' />")
+    picklist.insertAdjacentHTML('beforeend',"<img class='deck card' id='"+i+"' src='"+boxtoper[0][3]+"'' alt='"+boxtoper[0][2]+"' draggable='true' ondragstart='drag(event)' />")
+    picklist.insertAdjacentHTML('beforeend',"<img class='deck card' id='"+i+"' src='"+promotion[0][3]+"'' alt='"+promotion[0][2]+"' draggable='true' ondragstart='drag(event)' />")
 })
 
 function open_pack(){
