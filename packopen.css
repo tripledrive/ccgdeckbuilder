@@ -5,3 +5,7 @@
 #output_cards{
     max-width: 1000px;
 }
+
+.selected{
+    filter: brightness(50%);
+}

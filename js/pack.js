@@ -53,24 +53,6 @@ function pickcard(search_word_box){
     })
 }
 
-// ドラッグ開始時にデータをセット
-function drag(event) {
-    event.dataTransfer.setData("text/plain", event.target.id);
-  }
-  
-  // ドラッグオーバー時にデフォルトの動作をキャンセル
-  function allowDrop(event) {
-    event.preventDefault();
-  }
-  
-  // ドロップ時に要素を移動
-  function drop(event) {
-    event.preventDefault();
-    const data = event.dataTransfer.getData("text/plain");
-    const draggedElement = document.getElementById(data);
-    const dropTarget = event.target;
-  
-    // ドラッグされた要素とドロップ先の要素を入れ替える
-    dropTarget.parentNode.insertBefore(draggedElement, dropTarget);
-  }
-  
+$(document).on('click','.card', function(){
+	$(this).toggleClass('selected');
+})
