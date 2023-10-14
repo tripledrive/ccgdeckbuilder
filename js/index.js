@@ -19,7 +19,7 @@ var search_cards = cards;
         reload_deck()
     }
 }());
-
+js/index.js
 $(document).on('click', ".list", function(){
 	card_id = $(this).attr('id');
 	decks.unshift(search_cards[card_id])
